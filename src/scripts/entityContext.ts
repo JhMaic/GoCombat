@@ -1,10 +1,20 @@
 import { Shooter } from './entities/shooter';
 import { Bullet } from './entities/bullet';
-import { Block } from './entities/block';
+import { CellMap } from './entities/cellMap';
+import { WindowSize } from './types';
 
 export class EntityContext {
-  public defender: Shooter;
-  public challenger: Shooter;
-  public bullets: Array<Bullet>;
-  public blocks: Array<Block>;
+  defender: Shooter;
+  challenger: Shooter;
+  bullets: Array<Bullet>;
+  cellMap: CellMap;
+
+  constructor(windowSize: WindowSize, defender: Shooter, challenger: Shooter) {
+    this.cellMap = new CellMap(windowSize);
+    this.bullets = Array<Bullet>();
+  }
+
+  getPLayers() {
+    return [this.defender, this.challenger];
+  }
 }

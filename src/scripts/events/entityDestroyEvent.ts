@@ -6,5 +6,6 @@ export class EntityDestroyEvent implements CallableEvent {
   constructor(public entity: Entity) {}
   call(context: EntityContext) {
     destroyEntity(context, this.entity);
+    // TODO: remove from cell
   }
 }

@@ -3,7 +3,11 @@ import { Shooter } from './shooter';
 
 export class Bullet extends Entity implements DirectionallyLocatable {
   velocity: Velocity;
-  from: Shooter;
   direction: Direction;
-  location: Location;
+  from: Shooter;
+  constructor(shooter: Shooter, location: Location) {
+    super(location);
+    this.from = shooter;
+    this.direction = shooter.direction;
+  }
 }

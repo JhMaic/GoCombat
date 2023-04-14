@@ -10,6 +10,8 @@ export type Location = {
 
 export type Direction = 'UP' | 'DOWN' | 'LEFT' | 'RIGHT';
 
+export type WindowSize = { X: number; Y: number };
+
 export type DirectionallyLocatable = {
   location: Location;
   direction: Direction;
@@ -43,7 +45,7 @@ export interface Rule {
    * @param entityContext current entity context
    * @return RuleEvent
    */
-  eval: (entityContext: EntityContext) => Event | undefined;
+  eval: (entityContext: EntityContext) => Event | Events | undefined;
 }
 
 /**
@@ -52,6 +54,7 @@ export interface Rule {
 interface Event {
   call: (context: EntityContext) => any;
 }
+export type Events = Array<Event>;
 
 export interface CallableEvent extends Event {
   call: (context: EntityContext) => void;
@@ -62,5 +65,5 @@ export interface EndEvent extends Event {
 }
 
 export class Entity {
-  location: Location;
+  constructor(public location: Location) {}
 }
