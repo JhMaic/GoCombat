@@ -1,6 +1,6 @@
-import {Shooter} from './entities/shooter';
-import {Bullet} from './entities/bullet';
-import {Block} from './entities/block';
+import { Shooter } from './entities/shooter';
+import { Bullet } from './entities/bullet';
+import { Block } from './entities/block';
 
 export class EntityContext {
   public defender: Shooter;

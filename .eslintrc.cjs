@@ -45,37 +45,6 @@ module.exports = {
       }
     ],
 
-
-    /**
-     * 変数名ルール定義
-     * @see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/naming-convention.md
-     * @see https://dev.classmethod.jp/articles/shuntaka9576-check-eslint/
-     */
-    '@typescript-eslint/naming-convention': [
-      'error',
-      {
-        selector: ['variable', 'memberLike'],
-        format: ['strictCamelCase', 'UPPER_CASE'],
-        leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow',
-      },
-      {
-        selector: ['function', 'parameter', 'method'],
-        format: ['strictCamelCase'],
-        leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow',
-      },
-      {
-        selector: ['typeLike'],
-        format: ['StrictPascalCase'],
-      },
-
-      {
-        selector: ['enum', 'enumMember'],
-        format: ['UPPER_CASE'],
-      },
-    ],
-
     /**
      * 複雑度追加
      * */
